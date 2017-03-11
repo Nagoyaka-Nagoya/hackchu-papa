@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ArticleService } from "./article.service";
+import { Article } from "./article";
 
 @Component({
   selector: 'hc-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.styl']
 })
 export class AppComponent {
-  title = 'hc works!';
+
+  private articles: Article[];
+
+  constructor(private articleService: ArticleService) { }
+
+  ngOnInit() {
+      this.articleService.getArticles().subscribe(
+        articles => this.articles = articles,
+      );
+  }
+
+  title = 'ほげほげふわふわ';
+
+
 }
