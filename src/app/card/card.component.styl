@@ -1,0 +1,35 @@
+&:host
+  background-color #ffffff
+  margin-top 10px
+
+  border-right 1px solid #e0e0e0
+  border-bottom 1px solid #e0e0e0
+
+  //基本的には横幅の90% 最大で300pxでよさそう。
+  width 90%
+  max-width 300px
+  height 250px
+
+  display flex
+  flex-direction column
+
+  transition height ease 0.2s
+
+  &.expanded
+    max-height none
+    height 400px
+
+  .eyecatch-image
+    height 170px
+    background-image url(http://ms-cache.walkerplus.com/walkertouch/wtd/images/n/6671.jpg)
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+
+  .more
+    flex none
+
+    .arrow
+      height 20px
+      width 20px
+      fill #e0e0e0
