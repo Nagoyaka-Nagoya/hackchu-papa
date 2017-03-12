@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "hc",
       "styles": [
-        "styles.styl"
+        "styles.styl",
+        "material.styl"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

@@ -4,6 +4,10 @@
 </div>
 
 <router-outlet></router-outlet>
-<div class="card-list">
+<div class="loading hc-flex-center" *ngIf="!articles">
+  <md-progress-circle [color]="loadingColor" [mode]="loadingMode"></md-progress-circle>
+</div>
+
+<div class="card-list" *ngIf="articles">
   <hc-card [article]="article" *ngFor="let article of articles"></hc-card>
 </div>

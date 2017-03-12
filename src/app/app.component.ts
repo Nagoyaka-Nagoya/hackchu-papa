@@ -11,6 +11,9 @@ export class AppComponent {
 
   private articles: Article[];
 
+  private loadingColor = "primary";
+  private loadingMode = "indeterminate";
+
   constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
@@ -20,6 +23,4 @@ export class AppComponent {
   }
 
   title = 'ほげほげふわふわ';
-
-
 }
