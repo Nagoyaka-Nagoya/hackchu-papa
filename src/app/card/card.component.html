@@ -1,8 +1,10 @@
 <div class="eyecatch-image" [ngStyle]="{'background-image': 'url(' + ((article.webContent||{}).image || (article.twitterContent || {}.image) || '') + ')'}"></div>
 
-<div class="title">{{article.webContent.title}}</div>
+<div class="title" *ngIf="article.webContent">{{article.webContent.title}}</div>
+<div class="title" *ngIf="article.twitterContent">{{article.twitterContent.title}}</div>
 
-<div class="details" *ngIf="isExpanded">ほげほげほげほげほげ</div>
+<div class="details" *ngIf="isExpanded && article.webContent">{{article.webContent.text}}</div>
+<div class="details" *ngIf="isExpanded && article.twitterContent">{{article.webContent.text}}</div>
 
 <div class="more hc-flex-center" (click)="toggleAccordion()">
   <div class="arrow-container hc-flex-center">
