@@ -1,9 +1,13 @@
-<div class="eyecatch-image"></div>
+<div class="eyecatch-image" [ngStyle]="{'background-image': 'url(' + ((article.webContent||{}).image || (article.twitterContent || {}.image) || '') + ')'}"></div>
 
-<p>{{article.webContent.title}}</p>
+<div class="title">{{article.webContent.title}}</div>
+
+<div class="details" *ngIf="isExpanded">ほげほげほげほげほげ</div>
 
 <div class="more hc-flex-center" (click)="toggleAccordion()">
-  <svg class="arrow" viewBox="0 0 20 13">
-    <path d="M0 2.8L2.7 0 10 7.4 17.3 0 20 2.8 10 13z"/>
-  </svg>
+  <div class="arrow-container hc-flex-center">
+    <svg class="arrow" [class.close]="isExpanded" viewBox="0 0 20 13">
+      <path d="M0 2.8L2.7 0 10 7.4 17.3 0 20 2.8 10 13z"/>
+    </svg>
+  </div>
 </div>

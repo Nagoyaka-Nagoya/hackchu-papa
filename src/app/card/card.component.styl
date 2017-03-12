@@ -1,35 +1,66 @@
 &:host
   background-color #ffffff
-  margin-top 10px
+  position relative
+  border-radius 6px
+  overflow hidden
 
-  border-right 1px solid #e0e0e0
-  border-bottom 1px solid #e0e0e0
+  border-bottom 2px solid #e0e0e0
 
   //基本的には横幅の90% 最大で300pxでよさそう。
   width 90%
   max-width 300px
-  height 250px
+  min-height 200px
+  padding-bottom 40px
 
   display flex
   flex-direction column
 
   transition height ease 0.2s
 
+  margin-bottom 25px
+
+  &:last-child
+
   &.expanded
     max-height none
-    height 400px
 
   .eyecatch-image
     height 170px
-    background-image url(http://ms-cache.walkerplus.com/walkertouch/wtd/images/n/6671.jpg)
+    background-image url(https://jouhou.nagoya/wp/wp-content/uploads/2015/06/furnituredome.jpg)
     background-repeat no-repeat
     background-position center
     background-size cover
-
-  .more
     flex none
 
+  .title
+    font-size 17px
+    line-height 22px
+    margin 10px 10px 5px 10px
+    flex none
+
+  .more
+    position absolute
+    bottom 0
+    left 0
+    width 100%
+    height 40px
+    flex none
+    //background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 5%,rgba(0,0,0,0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+    .arrow-container
+      height 26px
+      width 26px
+      border-radius 50%
+      background-color #BEDF4A
+
     .arrow
-      height 20px
-      width 20px
-      fill #e0e0e0
+      border-radius 10px
+      height 14px
+      width 14px
+      fill white
+      transition all ease 0.2s
+      margin-top 1px
+
+      &.close
+        margin-top 0
+        transform rotate(180deg)

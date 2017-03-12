@@ -1,5 +1,8 @@
 
-<h1>{{title}}</h1>
+<div class="header hc-flex-center">
+  <div class="title">パパのバイブル</div>
+</div>
+
 <router-outlet></router-outlet>
 <div class="card-list">
   <hc-card [article]="article" *ngFor="let article of articles"></hc-card>
