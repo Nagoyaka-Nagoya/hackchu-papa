@@ -11,7 +11,7 @@ export class ArticleService {
   constructor (private http: Http) {}
 
   // private url = 'http://13.112.121.70:7700/dataspider/trigger/path';
-  private url = 'http://dev.api.pittankopta.net/hackchu/';
+  private url = 'https://api.pittankopta.net/hackchu/';
 
   getArticles (): Observable<Article[]> {
     return this.http.get(this.url)
